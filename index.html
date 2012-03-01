@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Short Daily Notes</title>
+
+        <!--disable zooming for mobile phone-->
+        <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+        <link type="text/css" rel="stylesheet" href="/css/style.css" />
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7675942-7']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </head>
+    <body>
+    <script type="text/javascript">
+        function add(){
+            var note = document.getElementById("note").value;
+            xmlhttp=new XMLHttpRequest();
+            xmlhttp.open("POST","add",true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send("note="+note);
+            
+            var notes = document.getElementById("notes_today");
+            notes.innerHTML = "<div class='note'>*"+note+"</div>"+notes.innerHTML;
+            document.getElementById("note").value = "";
+            return false;
+        }
+    </script>
+    <form onsubmit="return add();">
+            <table>
+                <tr>
+                    <td><div><textarea id="note" rows="3" cols="25"></textarea></div></td>
+                    
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input id="addNoteButton" class="button" type="submit" value="Add Note"/>
+                    </td>
+                </tr>
+            </table>  
+    </form>
+    <div class="header">
+        Notes from today:
+    </div>
+    
+    <div id="notes_today" class="notes">
+        {% for note in notes_today%}
+            <div class="note">*{{note.note}}</div>
+        {% endfor %}
+    </div>
+    <br />
+    <div class="header">Notes from yesterday:</div>
+    <div id="notes_yesterday" class="notes">
+        {% for note in notes_yesterday%}
+            <div class="note">*{{note.note}}</div>
+        {% endfor %}
+    </div>
+    <br />
+    <div class="header">Notes from older dates:</div>
+    <div id="notes_older" class="notes">
+        {% for note in notes_older%}
+            <div class="note">*{{note.created.date}} - {{note.note}}</div>
+        {% endfor %}
+    </div>
+    
+    <br />
+    <div id="credit"> 
+    Created by {{author}}
+    Version: 1.006-alpha
+    </div>
+    
+    
+
+    <!--{% for greeting in greetings %}
+      {% if greeting.author %}
+        <b>{{ greeting.author.nickname }}</b> wrote:
+      {% else %}
+       An anonymous person wrote:
+      {% endif %}
+      <blockquote>{{ greeting.content|escape }}</blockquote>
+    {% endfor %}
+
+    <form action="/sign" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Sign Guestbook"></div>
+    </form>
+
+    <a href="{{ url }}">{{ url_linktext }}</a>-->
+
+  </body>
+</html>

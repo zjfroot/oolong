@@ -1,0 +1,62 @@
+body {
+    color: #000;
+    font-size: 100%;
+    /*font-family: 'Lucida Grande','georgia',verdana, arial, sans-serif;*/
+    font-family: Georgia,verdana, arial, sans-serif,STXihei;
+}
+
+#translation_en{
+    border-style:dotted;
+    border-color:#ABCEDE;
+    border-width:1px;
+    color:#58ACFA;
+}
+#translation_zh{
+    border-style:dotted;
+    border-color:#ABCEDE;
+    border-width:1px;
+    color:#58ACFA;
+}
+td{
+    font-size: 20px;
+}
+
+table#list td {
+    border-style:dotted;
+    border-color:#ABCEDE;border-width:1px;
+    font-size: 16px;
+}
+
+.small{
+    font-size: 11px;
+}
+
+.header{
+    font-size:100%;
+    font-weight:bold;
+    background-color: #CFD2E8;
+}
+.notes{
+    border-left: 1px dashed #CFD2E8;
+    border-right: 1px dashed #CFD2E8;
+    background-color: #E9EAF5;
+}
+.note{
+    border-bottom: 1px dashed #CFD2E8;
+}
+
+#note {
+    font-size: 100%;
+    border: 2px dashed #ABCABC
+}
+
+#credit{
+    font-size: 11px;
+    /*border-top: 1px dashed #ABCABC*/
+}
+#addNoteButton{
+   font-family: 'georgia';
+   font-size: 120%;
+   height: 50px; 
+   width: 150px; 
+}
