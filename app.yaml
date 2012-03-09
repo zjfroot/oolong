@@ -6,6 +6,9 @@ api_version: 1
 handlers:
 - url: /css
   static_dir: static/css
+  
+- url: /bootstrap
+  static_dir: static/bootstrap
 
 - url: /favicon.ico
   static_files: static/images/favicon.ico

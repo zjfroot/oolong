@@ -1,0 +1,14 @@
+*.class
+coolnote.iws
+*/.DS_Store
+.DS_Store
+*.ipr
+*.iws
+*/*.iml
+.idea/
+*/.idea/
+*.iml
+*/*~
+jifeng.gradle/.gradle/
+*.swp
+*.pyc
