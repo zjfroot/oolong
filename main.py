@@ -52,13 +52,20 @@ class MainHandler(webapp.RequestHandler):
             self.redirect(users.create_login_url(self.request.uri))
     
         
-
+class OolongBasicHandler(webapp.RequestHandler):
+    def get(self, id):
+        if (id == "overview") or (id == ""):
+            template_values = {}
+            path = os.path.join(os.path.dirname(__file__),'category.html')
+            self.response.out.write(template.render(path,template_values))
+        else:
+            self.response.out.write(id)
 
 def main():
     add_handler = AddNoteHandler()
     
     application = webapp.WSGIApplication([('/', MainHandler),
-                                          ('/add', AddNoteHandler)],
+                                          (r'/oolong-basic/(.*)', OolongBasicHandler)],
                                          debug=True)
     util.run_wsgi_app(application)
 
