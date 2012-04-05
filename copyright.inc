@@ -1,3 +1,3 @@
 <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; William's Oriental Tea 2012</p>
       </footer>
